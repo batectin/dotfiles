@@ -107,18 +107,18 @@ let s:dark_red = { "gui": "#BE5046", "cterm": "196", "cterm16": "9" }
 
 let s:green = { "gui": "#98C379", "cterm": "114", "cterm16": "2" }
 
-let s:yellow = { "gui": "#E5C07b", "cterm": "180", "cterm16": "3" }
+let s:yellow = { "gui": "#EEC475", "cterm": "180", "cterm16": "3" }
 let s:dark_yellow = { "gui": "#D19A66", "cterm": "173", "cterm16": "11" }
 
 let s:blue = { "gui": "#61AFEF", "cterm": "39", "cterm16": "4" } " Alternate cterm: 75
 
-let s:purple = { "gui": "#C678DD", "cterm": "170", "cterm16": "5" } " Alternate cterm: 176
+let s:purple = { "gui": "#CB70E6", "cterm": "170", "cterm16": "5" } " Alternate cterm: 176
 
-let s:cyan = { "gui": "#56B6C2", "cterm": "38", "cterm16": "6" } " Alternate cterm: 73
+let s:cyan = { "gui": "#61CEDC", "cterm": "38", "cterm16": "6" } " Alternate cterm: 73
 
-let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+let s:white = { "gui": "#D5D9E2", "cterm": "145", "cterm16" : "7" }
 
-let s:black = { "gui": "#282C34", "cterm": "235", "cterm16": "0" }
+let s:black = { "gui": "#23252F", "cterm": "235", "cterm16": "0" }
 let s:visual_black = { "gui": "NONE", "cterm": "NONE", "cterm16": s:black.cterm16 } " Black out selected text in 16-color visual mode
 
 let s:comment_grey = { "gui": "#5C6370", "cterm": "59", "cterm16": "15" }

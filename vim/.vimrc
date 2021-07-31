@@ -1,5 +1,5 @@
-﻿" Make the Leader key , instead of the default \
-let mapleader=","
+﻿" Make the Leader key , instead of the default \"
+let mapleader="\<Space>"
 
 " ########################################################################
 " ######## Vim Plug and Plugins
@@ -63,14 +63,15 @@ nnoremap <silent> <Leader>d :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>nt :NERDTree<CR>
 nnoremap <silent> <Leader>nf :NERDTreeFind <CR>
 
-let g:NERDTreeWinPos = 'right'
+let g:NERDTreeWinPos = 'left'
+let g:NERDTreeShowHidden = 1
 
 " ########################################################################
 " ######## Telescope
 " ########################################################################
 nnoremap ff :Files<CR>
 nnoremap aa :Buffers<CR>
-nnoremap <Leader>f :Rg
+nnoremap <Leader>f :Rg<CR>
 
 " ########################################################################
 " ######## Vim-Signify
@@ -245,7 +246,7 @@ syntax enable
 syntax on
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 source ~/dotfiles/vim/mappings.vim

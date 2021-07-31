@@ -66,8 +66,6 @@ nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
 nnoremap <LEFT> :2 wincmd <<CR>
 nnoremap <RIGHT> :2 wincmd ><CR>
-nnoremap <UP> :2 wincmd +<CR>
-nnoremap <UP> :2 wincmd +<CR>
 
 " Intuitively navigate wrapped lines. Pressing j/k moves to the next/previous
 " line even if wrppaed and the 'next' line is still the same line. Same for 0
@@ -84,8 +82,6 @@ nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>hl :set hlsearch!<CR>
 nnoremap <Leader>t :call ToggleIndentType()<CR>
 nnoremap <Leader><Leader>rn :call ToggleRelativeLineNumbers()<CR>
-nnoremap <Space> za
-vnoremap <Space> za
 nnoremap tw :call ToggleTextWidth()<CR>
 nmap <silent> cm :call ToggleList("Quickfix List", 'c')<CR>
 
@@ -98,6 +94,7 @@ nnoremap <Leader>q :bp <BAR> bd #<CR>
 
 nnoremap <Leader>vp :vsplit<CR>
 nnoremap <Leader>hp :split<CR>
+nnoremap <Leader>x :close<CR>
 
 nnoremap <Leader>vs :vertical resize +
 nnoremap <Leader>hs :resize +
