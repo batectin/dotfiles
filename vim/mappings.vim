@@ -14,7 +14,7 @@ endfunction
 " Function to toggle textwidth bar
 function! ToggleTextWidth()
     if &colorcolumn == ""
-        set colorcolumn=80,100
+        set colorcolumn=120
     else
         set colorcolumn=""
     endif
@@ -22,10 +22,10 @@ endfunction
 
 " Toggle relative line numbers
 function! ToggleRelativeLineNumbers()
-    if (&relativenumber)
-        set norelativenumber
+    if (&number)
+        set nonu nornu
     else
-        set relativenumber
+        set nu rnu
     endif
 endfunction
 
@@ -81,7 +81,7 @@ nnoremap <Leader>sc :call ToggleSignColumn()<CR>
 nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>hl :set hlsearch!<CR>
 nnoremap <Leader>t :call ToggleIndentType()<CR>
-nnoremap <Leader><Leader>rn :call ToggleRelativeLineNumbers()<CR>
+nnoremap <Leader>z :call ToggleRelativeLineNumbers()<CR>
 nnoremap tw :call ToggleTextWidth()<CR>
 nmap <silent> cm :call ToggleList("Quickfix List", 'c')<CR>
 
@@ -100,8 +100,12 @@ nnoremap <Leader>vs :vertical resize +
 nnoremap <Leader>hs :resize +
 
 " Move visually selected lines up and down with J and K respectively
-vnoremap J :move '>+1<CR>gv=gv
-vnoremap K :move '<-2<CR>gv=gv
+vnoremap <A-Down> :move '>+1<CR>gv=gv
+nnoremap <A-Down> :move .+1<CR>==
+inoremap <A-Down> <Esc>:move .+1<CR>==gi
+vnoremap <A-Up> :move '<-2<CR>gv=gv
+nnoremap <A-Up> :move .-2<CR>==
+inoremap <A-Up> <Esc>:move .-2<CR>==gi
 
 nnoremap <Leader>ah <C-W>H
 nnoremap <Leader>aj <C-W>J
@@ -131,4 +135,3 @@ nnoremap * *N
 " Make delimitMate play nicely with pop up menu
 imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
 
-inoremap jj <ESC> :w<CR>

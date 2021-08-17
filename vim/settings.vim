@@ -44,8 +44,8 @@ set linebreak
 
 set breakindentopt=shift:3,sbr
 
-set textwidth=120
-set colorcolumn=90,120
+set textwidth=0
+set colorcolumn=120
 
 " ########################################################################
 " ######## Tabs and Spaces
