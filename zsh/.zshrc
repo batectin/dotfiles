@@ -6,15 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export TERM="xterm-256color"
-# export LC_CTYPE="en_US.UTF-9"
+export LC_CTYPE="C.UTF-8"
 
 #; Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
 # Run spectrum_ls to see a list of colors zsh can easily produce and
 # which can be used in a theme
-export ZSH_SPECTRUM_TEXT=${ZSH_SPECTRUM_TEXT:-Arma virumque cano Troiae qui primus ab oris}
-# ZSH_HIGHLIGHT_STYLES[command]="fg=green,bold"
+# export ZSH_SPECTRUM_TEXT=${ZSH_SPECTRUM_TEXT:-Arma virumque cano Troiae qui primus ab oris}
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
