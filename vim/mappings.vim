@@ -14,7 +14,7 @@ endfunction
 " Function to toggle textwidth bar
 function! ToggleTextWidth()
     if &colorcolumn == ""
-        set colorcolumn=120
+        set colorcolumn=130
     else
         set colorcolumn=""
     endif
@@ -64,8 +64,8 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
-nnoremap <LEFT> :2 wincmd <<CR>
-nnoremap <RIGHT> :2 wincmd ><CR>
+nnoremap <A-LEFT> :2 wincmd <<CR>
+nnoremap <A-RIGHT> :2 wincmd ><CR>
 
 " Intuitively navigate wrapped lines. Pressing j/k moves to the next/previous
 " line even if wrppaed and the 'next' line is still the same line. Same for 0
@@ -89,8 +89,9 @@ nmap <silent> cm :call ToggleList("Quickfix List", 'c')<CR>
 " ######## Buffer and Window Management
 " ########################################################################
 nnoremap <Leader>n :bn<CR>
-nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>q :bp <BAR> bd #<CR>
+nnoremap <Leader>Q :bp <BAR> bd #<CR>
 
 nnoremap <Leader>vp :vsplit<CR>
 nnoremap <Leader>hp :split<CR>

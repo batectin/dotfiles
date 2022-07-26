@@ -60,11 +60,15 @@ autocmd FileType gitcommit setlocal spell
 " ######## NERDTree
 " ########################################################################
 nnoremap <silent> <Leader>d :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>nt :NERDTree<CR>
-nnoremap <silent> <Leader>nf :NERDTreeFind <CR>
+" nnoremap <silent> <Leader>nt :NERDTree<CR>
+nnoremap <silent> <Leader>p :NERDTreeFind <CR>
 
 let g:NERDTreeWinPos = 'left'
 let g:NERDTreeShowHidden = 1
+let g:pymode_lint_checkers = ['pyflakes', 'pylint', 'pep8']
+let g:pymode_lint_ignore = "C0111,W0621,E501,F0002"
+let g:ale_python_pylint_executable = 'pylint'
+let g:ale_python_pylint_options = '--rcfile ~/.pylintrc'
 
 " ########################################################################
 " ######## Telescope
@@ -223,13 +227,16 @@ let g:compe.source = {
 " ########################################################################
 " ######## Ale
 " ########################################################################
-let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['eslint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['eslint'], 'python': ['pylint'] }
 let g:ale_fixers = {
             \   'javascript': [
             \       'eslint'
             \   ],
             \  'typescript': [
             \      'eslint'
+            \  ],
+            \   'python': [
+            \       'pylint'
             \  ]
             \ }
 
@@ -246,6 +253,7 @@ syntax enable
 syntax on
 set termguicolors
 set background=dark
+" colorscheme gruvbox
 colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -259,7 +267,7 @@ if executable("rg")
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
-" nmap <silent> <Leader>ee <Plug>(coc-refactor)
+nmap <silent> <Leader>ee <Plug>(coc-refactor)
 set completeopt=menu,menuone,noselect,noinsert
 set shortmess+=c
 set shortmess-=F

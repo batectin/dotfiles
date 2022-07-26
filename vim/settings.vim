@@ -1,9 +1,11 @@
+set clipboard=unnamedplus
+
 " Highlight the current cursor line
 set cursorline
-
+set mouse=r
 " Display line numbers by default
 set number
-
+set autochdir
 " Use relative line numbers by default
 set relativenumber
 
@@ -45,7 +47,7 @@ set linebreak
 set breakindentopt=shift:3,sbr
 
 set textwidth=0
-set colorcolumn=120
+set colorcolumn=130
 
 " ########################################################################
 " ######## Tabs and Spaces
