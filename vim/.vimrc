@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'ap/vim-buftabline'
-
 " Feature Enhancers
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sbernheim4/vim-ripgrep'
@@ -36,11 +35,12 @@ Plug 'gruvbox-community/gruvbox'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'scalameta/nvim-metals'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ojroques/nvim-lspfuzzy'
+" Plug 'scalameta/nvim-metals'
 " Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
-Plug 'nvim-lua/popup.nvim'
-Plug 'ojroques/nvim-lspfuzzy'
 Plug 'jparise/vim-graphql'
 
 " Plug 'fsharp/vim-fsharp', {
@@ -134,26 +134,6 @@ let g:dashboard_custom_shortcut={
 
 lua << EOF
 
--- SCALA/METALS --> nvim-metals
-metals_config = require'metals'.bare_config
-
-metals_config.settings = {
-   showImplicitArguments = true,
-}
-
-metals_config.on_attach = function()
-    require'completion'.on_attach();
-end
-
-metals_config.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = {
-            prefix = '',
-        }
-    }
-)
-
-
 -- import packages
 
 local lspconfig = require'lspconfig'
@@ -200,14 +180,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 
 EOF
-
-" Setup scala lsp via metals
-if has('nvim-0.5')
-    augroup lsp
-        au!
-        au FileType scala,sbt lua require('metals').initialize_or_attach(metals_config)
-    augroup end
-endif
 
 
 " ########################################################################
